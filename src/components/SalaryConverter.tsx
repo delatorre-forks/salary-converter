@@ -8,7 +8,7 @@ import SalaryOutput from "./SalaryOutput";
 import SwitchCamera from "@/lib/icons/SwitchCamera";
 
 export default function SalaryConverter() {
-  const [usdSalary, setUsdSalary] = useState(1000);
+  const [usdSalary, setUsdSalary] = useState(0);
   const [salaryPeriod, setSalaryPeriod] = useState<SalaryPeriod>("monthly");
   const [salary, setSalary] = useState<SalaryInfo | null>(null);
   const [loading, setLoading] = useState(false);
@@ -18,11 +18,19 @@ export default function SalaryConverter() {
     const exchangeRate = await fetchExchangeRate();
     const usdMonthly = salaryPeriod === "annual" ? usdSalary / 12 : usdSalary;
     const brlMonthly = usdMonthly * exchangeRate;
+
+    if (usdSalary === 0 || isNaN(usdSalary)) {
+      setSalary(null);
+      setLoading(false);
+      return
+    }
+    
     setSalary({
       usd: usdSalary,
       brl: brlMonthly,
       period: salaryPeriod,
-    });
+    });    
+   
     setLoading(false);
   }
 
@@ -47,7 +55,7 @@ export default function SalaryConverter() {
         disabled={loading}
         className="bg-green-700 flex justify-center font-normal text-white w-full rounded py-4 px-4 hover:bg-green-800 disabled:bg-green-600"
       >
-        <SwitchCamera className="mr-2" /> Converter
+        <SwitchCamera className="mr-2" /> Converter para BRL
       </button>
       {salary ? (
         <div className="flex flex-col mt-4 justify-center items-center">

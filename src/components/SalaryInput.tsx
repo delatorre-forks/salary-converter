@@ -15,6 +15,7 @@ export default function SalaryInput({ value, period, onValueChange, onPeriodChan
         value={value}
         onChange={(e) => onValueChange(parseFloat(e.target.value))}
         className="border border-gray-300 rounded p-2 w-full"
+        required={true}
       />
       <select
         value={period}
