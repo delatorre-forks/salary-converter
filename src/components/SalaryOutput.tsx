@@ -1,4 +1,4 @@
-import { SalaryInfo } from '../types/Salary';
+import { SalaryInfo } from '@/types/Salary';
 
 type Props = {
   salary: SalaryInfo;

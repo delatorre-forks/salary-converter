@@ -1,4 +1,4 @@
-import SalaryConverter from '../components/SalaryConverter';
+import SalaryConverter from '@/components/SalaryConverter';
 
 export default function Home() {
   return (
