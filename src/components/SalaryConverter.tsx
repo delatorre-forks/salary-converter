@@ -28,9 +28,9 @@ export default function SalaryConverter() {
 
   return (
     <div className="bg-white shadow rounded-lg p-6 max-w-md mx-auto">
-      <h1 className="text-2xl font-semibold mb-4">Conversor de Salário</h1>
+      <h1 className="text-2xl font-semibold mb-4">Conversor de Dólar para BRL</h1>
       <div className="mb-4">
-        <label className="block mb-2">Salário em USD:</label>
+        <label className="block mb-2">Salário estimado em Dólar (USD):</label>
         <SalaryInput
           value={usdSalary}
           period={salaryPeriod}
