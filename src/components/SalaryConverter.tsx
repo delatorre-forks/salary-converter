@@ -38,10 +38,10 @@ export default function SalaryConverter() {
 
   return (
     <div className="bg-white shadow rounded-lg py-10 px-8 max-w-md mx-auto min-h-[400px]">
-      <h1 className="text-2xl font-semibold mb-4 text-center">
-        Conversor de Dólar para BRL
+      <h1 className="text-2xl font-semibold mt-2 mb-6 text-center">
+        Conversor de Dólar para Real
       </h1>
-      <div className="mb-4">
+      <div className="my-6">
         <label className="block mb-2">
           Informe a remuneração estimada em Dólar (USD)
         </label>
@@ -57,7 +57,7 @@ export default function SalaryConverter() {
         disabled={loading}
         className="bg-green-700 flex justify-center font-normal text-white w-full rounded py-4 px-4 hover:bg-green-800 disabled:bg-green-600"
       >
-        <SwitchCamera className="mr-2" /> Converter para BRL
+        <SwitchCamera className="mr-2" /> Converter para Real
       </button>
       {salary ? (
         <div className="flex flex-col mt-4 justify-center items-center">

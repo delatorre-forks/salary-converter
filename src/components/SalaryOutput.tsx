@@ -13,7 +13,7 @@ export default function SalaryOutput({ salary }: Props) {
   return (
     <div className='flex flex-col py-4 mx-auto'>
       <p className="text-lg">
-        USD {salary.usd.toFixed(2)} {salary.period} =       
+        O equivalente em <span className='font-bold'>BRL</span> é:       
       </p>
       <p className="text-4xl font-bold text-green-700">
         {formatBRL.format(salary.brl)} / mês
