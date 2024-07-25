@@ -12,6 +12,7 @@ export default function SalaryConverter() {
   const [salaryPeriod, setSalaryPeriod] = useState<SalaryPeriod>("monthly");
   const [salary, setSalary] = useState<SalaryInfo | null>(null);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   async function handleConvert() {
     setLoading(true);
@@ -22,20 +23,21 @@ export default function SalaryConverter() {
     if (usdSalary === 0 || isNaN(usdSalary)) {
       setSalary(null);
       setLoading(false);
-      return
+      setError(true);
+      return;
     }
-    
+
     setSalary({
       usd: usdSalary,
       brl: brlMonthly,
       period: salaryPeriod,
-    });    
-   
+    });
+    setError(false);
     setLoading(false);
   }
 
   return (
-    <div className="bg-white shadow rounded-lg py-10 px-8 max-w-md mx-auto min-h-96">
+    <div className="bg-white shadow rounded-lg py-10 px-8 max-w-md mx-auto min-h-[400px]">
       <h1 className="text-2xl font-semibold mb-4 text-center">
         Conversor de Dólar para BRL
       </h1>
@@ -62,9 +64,15 @@ export default function SalaryConverter() {
           <SalaryOutput salary={salary} />
         </div>
       ) : (
-        <div className="flex flex-col mt-4 justify-center items-center">
-          <p className="text-lg">USD 0.00 {salaryPeriod} =</p>
-          <p className="text-4xl font-bold text-green-700">R$ 0,00</p>
+        <div className="flex flex-col mt-4 pt-2 justify-center items-center">
+          {error ? (
+            <p className="text-sm text-red-800">Insira um valor válido</p>
+          ) : (
+            <>
+              <p className="text-lg">USD 0.00 {salaryPeriod} =</p>
+              <p className="text-4xl font-bold text-green-700">R$ 0,00</p>
+            </>
+          )}
         </div>
       )}
     </div>
