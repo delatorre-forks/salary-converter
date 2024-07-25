@@ -27,7 +27,7 @@ export default function SalaryConverter() {
   }
 
   return (
-    <div className="bg-white shadow rounded-lg p-6 max-w-md mx-auto">
+    <div className="bg-white shadow rounded-lg p-6 max-w-md mx-auto min-h-96">
       <h1 className="text-2xl font-semibold mb-4">Conversor de Dólar para BRL</h1>
       <div className="mb-4">
         <label className="block mb-2">Salário estimado em Dólar (USD):</label>
@@ -46,10 +46,18 @@ export default function SalaryConverter() {
        <SwitchCamera className='mr-2' /> Converter
       </button>
       {salary && (
-        <div className="mt-4 h-5">
+        <div className="flex flex-col mt-4 justify-center items-center">
           <SalaryOutput salary={salary} />
         </div>
       )}
+
+      { !salary && (
+        <div className="flex flex-col mt-4 justify-center items-center">
+        <p className="text-lg">USD 0.00 {salaryPeriod} =</p>
+        <p className="text-4xl font-bold text-green-700">R$ 0.00</p>
+      </div>
+      )}
+
     </div>
   );
 }

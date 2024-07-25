@@ -11,10 +11,12 @@ export default function SalaryOutput({ salary }: Props) {
   });
 
   return (
-    <div>
+    <div className='flex flex-col py-4 mx-auto'>
       <p className="text-lg">
-        USD {salary.usd.toFixed(2)} {salary.period} ={' '}
-        <span className='text-4xl'><strong>{formatBRL.format(salary.brl)} por mês</strong></span>
+        USD {salary.usd.toFixed(2)} {salary.period} =       
+      </p>
+      <p className="text-4xl font-bold text-green-700">
+        {formatBRL.format(salary.brl)}
       </p>
     </div>
   );
