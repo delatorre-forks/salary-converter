@@ -16,7 +16,7 @@ export default function SalaryOutput({ salary }: Props) {
         USD {salary.usd.toFixed(2)} {salary.period} =       
       </p>
       <p className="text-4xl font-bold text-green-700">
-        {formatBRL.format(salary.brl)}
+        {formatBRL.format(salary.brl)} / mês
       </p>
     </div>
   );

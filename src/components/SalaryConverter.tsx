@@ -27,10 +27,10 @@ export default function SalaryConverter() {
   }
 
   return (
-    <div className="bg-white shadow rounded-lg p-6 max-w-md mx-auto min-h-96">
-      <h1 className="text-2xl font-semibold mb-4">Conversor de Dólar para BRL</h1>
+    <div className="bg-white shadow rounded-lg py-10 px-8 max-w-md mx-auto min-h-96">
+      <h1 className="text-2xl font-semibold mb-4 text-center">Conversor de Dólar para BRL</h1>
       <div className="mb-4">
-        <label className="block mb-2">Salário estimado em Dólar (USD):</label>
+        <label className="block mb-2">Informe a remuneração estimada em Dólar (USD)</label>
         <SalaryInput
           value={usdSalary}
           period={salaryPeriod}
@@ -54,7 +54,7 @@ export default function SalaryConverter() {
       { !salary && (
         <div className="flex flex-col mt-4 justify-center items-center">
         <p className="text-lg">USD 0.00 {salaryPeriod} =</p>
-        <p className="text-4xl font-bold text-green-700">R$ 0.00</p>
+        <p className="text-4xl font-bold text-green-700">R$ 0,00</p>
       </div>
       )}
 
