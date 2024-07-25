@@ -1,13 +1,18 @@
 export async function fetchExchangeRate(): Promise<number> {
   try {
-    const response = await fetch('/api/exchange-rate');
+    const response = await fetch('https://economia.awesomeapi.com.br/json/last/USD-BRL', {
+      next: { revalidate: 300 }
+    });
+
     if (!response.ok) {
       throw new Error('Falha ao obter a cotação');
     }
+
     const data = await response.json();
-    return data.exchangeRate;
+    return parseFloat(data.USDBRL.ask); 
+
   } catch (error) {
     console.error('Erro ao buscar taxa de câmbio:', error);
-    return 0;
+    return 0; 
   }
 }
