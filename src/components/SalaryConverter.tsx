@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { fetchExchangeRate } from '../api/exchangeRate';
+import { fetchExchangeRate } from '../services/exchangeRate';
 import { SalaryInfo, SalaryPeriod } from '../types/Salary';
 import SalaryInput from './SalaryInput';
 import SalaryOutput from './SalaryOutput';
