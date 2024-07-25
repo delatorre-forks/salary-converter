@@ -1,6 +1,6 @@
 export async function fetchExchangeRate(): Promise<number> {
   try {
-    const response = await fetch('/api/exchangeRate');
+    const response = await fetch('/api/exchange-rate');
     if (!response.ok) {
       throw new Error('Falha ao obter a cotação');
     }
