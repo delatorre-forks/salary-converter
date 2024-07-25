@@ -3,7 +3,7 @@ export const runtime = 'edge';
 export async function GET() {
   try {
     const response = await fetch('https://economia.awesomeapi.com.br/json/last/USD-BRL', {
-      next: { revalidate: 300 } // Revalidate every 5 minutes
+      next: { revalidate: 300 }
     });
 
     if (!response.ok) {
