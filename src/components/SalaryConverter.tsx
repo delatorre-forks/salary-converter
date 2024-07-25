@@ -41,12 +41,12 @@ export default function SalaryConverter() {
       <button
         onClick={handleConvert}
         disabled={loading}
-        className="bg-green-700 flex justify-center font-normal text-white w-full rounded py-4 px-4 hover:bg-green-800 disabled:bg-green-300"
+        className="bg-green-700 flex justify-center font-normal text-white w-full rounded py-4 px-4 hover:bg-green-800 disabled:bg-green-600"
       >
        <SwitchCamera className='mr-2' /> Converter
       </button>
       {salary && (
-        <div className="mt-4">
+        <div className="mt-4 h-5">
           <SalaryOutput salary={salary} />
         </div>
       )}
